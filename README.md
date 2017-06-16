@@ -36,6 +36,7 @@ Subject line contains succinct description of the change.
 The scope can be one of the following:
 
 * readme
+* build_system
 
 Not every commit to projects that do have scopes will necessarily specify a scope. If the commit is not limited or
 relevant to a single scope, leave it out.
