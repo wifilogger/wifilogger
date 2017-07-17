@@ -1,0 +1,17 @@
+{
+  "name": "echo",
+  "version": "0.1.0",
+  "description": "",
+  "cordova": {
+    "id": "org.apache.cordova.test.echo",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "",
+  "license": "MIT"
+}
