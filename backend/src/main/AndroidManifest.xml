@@ -2,4 +2,13 @@
 <manifest package="io.github.wifilogger"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <application>
+        <receiver android:name="io.github.wifilogger.NetworkStateReceiver"
+                  android:enabled="true"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+    </application>
 </manifest>

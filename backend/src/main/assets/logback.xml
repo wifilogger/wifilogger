@@ -1,0 +1,36 @@
+<configuration>
+    <appender name="logcat" class="ch.qos.logback.classic.android.LogcatAppender">
+        <tagEncoder>
+            <pattern>%logger{0}</pattern>
+        </tagEncoder>
+
+        <encoder>
+            <pattern>[%thread] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="rollingfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/sdcard/wifilogger_test.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>/sdcard/wifilogger_test_%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>2</maxIndex>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>2MB</maxFileSize>
+        </triggeringPolicy>
+
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="ALL">
+        <appender-ref ref="logcat" />
+    </root>
+
+    <root level="ALL">
+        <appender-ref ref="rollingfile" />
+    </root>
+</configuration>

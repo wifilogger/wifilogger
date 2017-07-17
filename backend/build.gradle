@@ -48,7 +48,7 @@ android {
     buildToolsVersion "26.0.0"
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 26
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
@@ -62,4 +62,8 @@ android {
 
 dependencies {
     testCompile 'junit:junit:4.12'
+
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile 'com.github.tony19:logback-android-core:1.1.1-6'
+    compile 'com.github.tony19:logback-android-classic:1.1.1-6'
 }
