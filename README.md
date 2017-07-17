@@ -64,3 +64,8 @@ Closed bugs should be listed on a separate line in the footer prefixed with "Clo
 or in case of multiple issues:
 
     Closes #123, #245, #992
+
+## Code style conventions
+
+Our style conventions are defined in the [checkstyle configuration](config/checkstyle/checkstyle.xml), and enforced
+using the CheckStyle plugin. Documentation detailing the setup and usage can be found [here](docs/CHECKSTYLE.md).
