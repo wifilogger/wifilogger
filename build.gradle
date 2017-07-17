@@ -1,14 +1,9 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 buildscript {
     repositories {
         jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
     }
 }
 
@@ -16,8 +11,30 @@ allprojects {
     repositories {
         jcenter()
     }
-}
+    configurations {
+        checkstyleClasspath
+    }
+    dependencies {
+        checkstyleClasspath 'com.puppycrawl.tools:checkstyle:7.8.1'
+    }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+    task checkstyle(type: Checkstyle) {
+        configFile = rootProject.file("config/checkstyle/checkstyle.xml")
+        source 'src'
+        include '**/*.java'
+        exclude '**/gen/**'
+
+        classpath = files()
+        checkstyleClasspath = project.configurations.checkstyleClasspath
+
+        maxWarnings 1
+
+        reports {
+            xml.enabled true
+            xml.destination new File("$project.buildDir/reports/checkstyle/checkstyle_report.xml")
+
+            html.enabled true
+            html.destination new File("$project.buildDir/reports/checkstyle/checkstyle_report.html")
+        }
+    }
 }
