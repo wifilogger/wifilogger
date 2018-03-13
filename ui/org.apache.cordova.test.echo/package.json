@@ -1,5 +1,5 @@
 {
-  "name": "echo",
+  "name": "org.apache.cordova.test.echo",
   "version": "0.1.0",
   "description": "",
   "cordova": {

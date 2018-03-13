@@ -5,7 +5,7 @@
       version="0.1.0">
     <name>Echo</name>
 
-    <js-module src="www/echo.js" name="echo">
+    <js-module src="www/echo.js" name="org.apache.cordova.test.echo">
         <clobbers target="cordova.echo" />
     </js-module>
 
